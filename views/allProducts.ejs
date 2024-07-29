@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="app">
+        <%- include('./header') %>
+        <div class="content">
+            
+            <div class="all-products">   
+                <% allProducts.forEach(product => { %>
+                    <div class="product_card">
+                        <a href="/products/<%= product.id %>"><h2 class="product-name"><%= product.item %></h2></a>
+                        <h2 class="stock"><%= product.stock_qty %></h2>
+                        <h2 class="product-price"><%= product.price %></h2>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
