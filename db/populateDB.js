@@ -65,7 +65,7 @@ INSERT INTO details (pID, description, category, supplier) VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: "postgresql://postgres:Mayank@localhost:5432/inventory",
+    connectionString: process.env.POSTGRES_URL,
   });
   await client.connect();
   await client.query(SQL);
